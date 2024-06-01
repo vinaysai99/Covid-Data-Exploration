@@ -4,3 +4,11 @@ This repository contains SQL queries for exploring and analyzing COVID-19 data. 
 
 ## Directory Structure
 
+covid-data-exploration/
+├── README.md
+├── scripts/
+│ ├── data_preparation.sql
+│ ├── data_analysis.sql
+│ └── create_views.sql
+└── examples/
+└── example_queries.sql
