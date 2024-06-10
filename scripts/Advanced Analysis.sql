@@ -50,13 +50,13 @@ WHERE total_death = (SELECT MAX(total_death) FROM total_deaths_by_date);
 
 -- Which month has maximum cases and deaths
 
-SELECT DATE_FORMAT(date_covid, '%Y-%m') AS month, SUM(new_cases) AS total_cases
+SELECT DATE_FORMAT(date_covid, '%Y-%m') AS month, SUM(new_cases) AS total_cases, SUM(new_deaths) AS total_death
 FROM Covid.CovidDeaths
 WHERE continent IS NOT NULL
 GROUP BY DATE_FORMAT(date_covid, '%Y-%m');
 
-SELECT DATE_FORMAT(date_covid, '%Y-%m') AS month, SUM(new_deaths) AS total_death
-FROM Covid.CovidDeaths
+SELECT DATE_FORMAT(date_covid, '%Y-%m') AS month, SUM(new_tests) AS total_test,SUM(new_vaccinations) AS total_vaccinations
+FROM Covid.covidvaccinations
 WHERE continent IS NOT NULL
 GROUP BY DATE_FORMAT(date_covid, '%Y-%m');
 
